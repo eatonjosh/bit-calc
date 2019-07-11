@@ -13,6 +13,7 @@ if mode == '1':
     new_number = (r.json()['bpi']['GBP']['rate_float']) # current price
 elif mode == '2':
     new_number = float(input("And now 1BTC is worth this:£"))
+    
 new_number = round(new_number,2)
 increase = new_number - original_number
 percentage_increase = increase / original_number * 100
@@ -20,6 +21,7 @@ money_invested = float(input("And I invested £"))  # money invested
 new_price = money_invested + (money_invested*percentage_increase/100)
 new_price = round(new_price,2)
 profit = new_price - money_invested
+
 if mode == '1':
     print("It is now be worth: £",new_price)
     print("And the profit would be: £",profit)
@@ -30,8 +32,5 @@ if mode == '1':
     print(new_number," is the current price of BTC")
 
     
-    
-
-
     
 
