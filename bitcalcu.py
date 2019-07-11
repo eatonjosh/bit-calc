@@ -22,16 +22,13 @@ new_price = round(new_price,2)
 profit = new_price - money_invested
 if mode == 1:
     print("It is now be worth: £",new_price)
+    print("And the profit would be: £",profit)
 if mode == 2:
     print("It would now be worth: £",new_price)
-print("And that would be £",profit,"profit")
+    print("And that would be £",profit,"profit")
 if mode == '1':
     print(new_number," is the current price of BTC")
 
     
     
-   
 
-
-
-# python C:\Users\joshe\Documents\bitcalcu.py
