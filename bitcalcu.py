@@ -1,8 +1,15 @@
 import requests
 r = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-# added avec idle 
+
 print("Mode 1 is for real profit calculations")
+print("(If I brought BTC when it cost £x, how much would my investment be")
+print("worth now?)")
+
 print("Mode 2 is for hypophetical profit calculations")
+print("(If I brought BTC when it cost £x, and BTC could be worth £x, how")
+print("much would my investment be worth now?)")
+
+
 mode = input("Mode 1 or 2?")
 
 if mode == '1':
@@ -12,7 +19,7 @@ elif mode == '2':
 if mode == '1':
     current_price = (r.json()['bpi']['GBP']['rate_float'])  # new number
 elif mode == '2':
-    current_price = float(input("And now 1BTC is worth this:£"))
+    current_price = float(input("And 1BTC could be worth this:£"))
 
 current_price = round(current_price, 2)
 increase = current_price - buy_price
