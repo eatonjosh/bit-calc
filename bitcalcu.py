@@ -1,7 +1,6 @@
 import requests
 r = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
-# ok then lets test it out this way
-
+# added avec idle 
 print("Mode 1 is for real profit calculations")
 print("Mode 2 is for hypophetical profit calculations")
 mode = input("Mode 1 or 2?")
