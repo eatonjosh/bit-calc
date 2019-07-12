@@ -30,7 +30,6 @@ if mode == '1':
 if mode == '2':
     print("It would now be worth: £", new_price)
     print("And that would be £", profit, "profit")
-# testing testing 123
 input("")
 
 # python C:\Users\joshe\Documents\bitcalcu.py
