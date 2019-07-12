@@ -28,6 +28,8 @@ new_price = round(new_price, 2)
 profit = new_price - money_invested
 profit = round(profit, 2)
 
+# just a testing how to use a branch
+
 if mode == '1':
     print("The investment would now be worth: £", new_price)
     print("And the profit would be: £", profit)
