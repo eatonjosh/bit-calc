@@ -2,4 +2,4 @@
 A simple bitcoin profit calculator, for real and hypophetical profit calculations
 
 
-Uses Coindesk API for price of BTC
+This program uses Coindesk API for the current price of Bitcoin

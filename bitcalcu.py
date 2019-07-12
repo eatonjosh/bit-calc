@@ -14,11 +14,9 @@ mode = input("Mode 1 or 2?")
 
 if mode == '1':
     buy_price = float(input("I brought bitcoin when 1BTC cost:£"))  # original price
-elif mode == '2':
-    buy_price = float(input("If I brought bitcoin when 1BTC cost:£"))
-if mode == '1':
     current_price = (r.json()['bpi']['GBP']['rate_float'])  # new number
 elif mode == '2':
+    buy_price = float(input("If I brought bitcoin when 1BTC cost:£"))
     current_price = float(input("And 1BTC could be worth this:£"))
 
 current_price = round(current_price, 2)
@@ -31,11 +29,11 @@ profit = new_price - money_invested
 profit = round(profit, 2)
 
 if mode == '1':
-    print("It is now be worth: £", new_price)
+    print("The investment would now be worth: £", new_price)
     print("And the profit would be: £", profit)
     print("£", current_price, " is the current price of BTC")
 if mode == '2':
-    print("It would now be worth: £", new_price)
+    print("The investment would now be worth: £", new_price)
     print("And that would be £", profit, "profit")
 input("")
 
