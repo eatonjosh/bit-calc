@@ -6,7 +6,7 @@ print("Mode 2 is for hypophetical profit calculations")
 mode = input("Mode 1 or 2?")
 
 if mode == '1':
-  buy_price = float(input("I brought bitcoin when 1BTC cost:£"))# original price
+  buy_price = float(input("I brought bitcoin when 1BTC cost:£")) # original price
 elif mode == '2':
     buy_price = float(input("If I brought bitcoin when 1BTC cost:£"))
 if mode == '1':
@@ -26,11 +26,14 @@ profit = round(profit,2)
 if mode == '1':
     print("It is now be worth: £",new_price)
     print("And the profit would be: £",profit)
+    print("£",current_price," is the current price of BTC")
 if mode == '2':
     print("It would now be worth: £",new_price)
     print("And that would be £",profit,"profit")
-if mode == '1':
-    print(current_price," is the current price of BTC")
+
+input("")
+
+
 
     
     
