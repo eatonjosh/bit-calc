@@ -22,7 +22,9 @@ elif mode == '2':
 current_price = round(current_price, 2)
 increase = current_price - buy_price
 percentage_increase = increase / buy_price * 100
+
 money_invested = float(input("And I invested £"))  # money invested
+
 new_price = money_invested + (money_invested*percentage_increase/100)
 new_price = round(new_price, 2)
 profit = new_price - money_invested
