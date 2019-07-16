@@ -1,8 +1,7 @@
 import requests
 import time
-ccprices = requests.get('https://api.nomics.com/v1/currencies/ticker?key=2018-09-demo-dont-deploy-b69315e440beb145&ids=BTC,ETH,BCH&interval=1d,30d&convert=GBP')
-print(ccprices.json())
-print(ccprices)
+ccprices = requests.get('https://api.coinmarketcap.com/v1/ticker/?convert=GBP')
+
 
 print("Mode 1 is for real profit calculations")
 print("(If I brought BTC when it cost £x, how much would my investment be")
