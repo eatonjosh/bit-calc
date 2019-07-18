@@ -3,14 +3,15 @@ import time
 url = 'https://api.coinmarketcap.com/v1/ticker/?convert=GBP'
 btc_price_gbp = (requests.get(url).json()[0]["price_gbp"])
 eth_price_gbp = (requests.get(url).json()[1]["price_gbp"])
-bch_price_gbp = (requests.get(url).json()[3]["price_gbp"])
-
+ltc_price_gbp = (requests.get(url).json()[3]["price_gbp"])
+bch_price_gbp = (requests.get(url).json()[4]["price_gbp"])
+xrp_price_gbp = (requests.get(url).json()[2]["price_gbp"])
 
 print("Mode 1 is for real profit calculations")
 print("(If I brought BTC when it cost £x, how much would my investment be")
 print("worth now?)")
 
-print("Mode 2 is for hypophetical profit calculations")
+print("Mode 2 is for hypothetical profit calculations")
 print("(If I brought BTC when it cost £x, and BTC could be worth £x, how")
 print("much would my investment be worth now?)")
 
@@ -24,13 +25,14 @@ else:
     time.sleep(3)
     quit()
 
-crypto_choice = input("BTC, BCH or ETH?:")
-if crypto_choice == 'BTC' or 'BCH' or 'ETH':
-    print("")
-else:
-    print("Error: Choose BTC, BCH or ETH")
-    time.sleep(3)
-    quit()
+crypto_choice = input("BTC, ETH, BCH, LTC or XRP?:")
+# Below needs fixing:
+# if crypto_choice == 'BTC' or 'BCH' or 'ETH' or 'LTC' or 'XRP':
+#    print("")
+# else:
+#    print("Error: Choose BTC, BCH or ETH")
+#    time.sleep(3)
+#    quit()
 
 if mode == '1':
     buy_price = float(input("I brought " + crypto_choice + " when 1" + crypto_choice + " cost:£"))  # original price
@@ -40,6 +42,11 @@ if mode == '1':
         current_price_int = bch_price_gbp
     elif crypto_choice == 'ETH':
         current_price_int = eth_price_gbp
+    elif crypto_choice == 'LTC':
+        current_price_int = ltc_price_gbp
+    elif crypto_choice == 'XRP':
+        current_price_int = xrp_price_gbp
+
 elif mode == '2':
     buy_price = float(input("I brought " + crypto_choice + " when 1" + crypto_choice + " cost:£"))
     current_price_int = float(input("And 1" + crypto_choice + " could be worth this:£"))
