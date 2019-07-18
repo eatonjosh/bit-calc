@@ -7,12 +7,14 @@ ltc_price_gbp = (requests.get(url).json()[3]["price_gbp"])
 bch_price_gbp = (requests.get(url).json()[4]["price_gbp"])
 xrp_price_gbp = (requests.get(url).json()[2]["price_gbp"])
 
+crypto_choice = input("BTC, ETH, BCH, LTC or XRP?:")
+
 print("Mode 1 is for real profit calculations")
-print("(If I brought BTC when it cost £x, how much would my investment be")
+print("(If I brought " + crypto_choice + " when it cost £x, how much would my investment be")
 print("worth now?)")
 
 print("Mode 2 is for hypothetical profit calculations")
-print("(If I brought BTC when it cost £x, and BTC could be worth £x, how")
+print("(If I brought " + crypto_choice + " when it cost £x, and " + crypto_choice + " could be worth £x, how")
 print("much would my investment be worth now?)")
 
 mode = input("Mode 1 or 2?")
@@ -25,7 +27,6 @@ else:
     time.sleep(3)
     quit()
 
-crypto_choice = input("BTC, ETH, BCH, LTC or XRP?:")
 # Below needs fixing:
 # if crypto_choice == 'BTC' or 'BCH' or 'ETH' or 'LTC' or 'XRP':
 #    print("")
