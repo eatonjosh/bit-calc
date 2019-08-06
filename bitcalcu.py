@@ -9,6 +9,13 @@ xrp_price_gbp = (requests.get(url).json()[2]["price_gbp"])
 
 crypto_choice = input("BTC, ETH, BCH, LTC or XRP?:")
 
+if crypto_choice in {'BTC', 'BCH', 'ETH', 'LTC', 'XRP'}:
+    print("")
+else:
+    print("Error: Choose BTC, ETH, LTC or XRP")
+    time.sleep(3)
+    quit()
+
 print("Mode 1 is for real profit calculations")
 print("(If I brought " + crypto_choice +
       " when it cost £x, how much would my investment be")
@@ -26,14 +33,6 @@ elif mode == '2':
     print("")
 else:
     print("Error: Input 1 or 2")
-    time.sleep(3)
-    quit()
-
-# Below needs fixing:
-if crypto_choice in {'BTC', 'BCH', 'ETH', 'LTC', 'XRP'}:
-    print("")
-else:
-    print("Error: Choose BTC, BCH or ETH")
     time.sleep(3)
     quit()
 
