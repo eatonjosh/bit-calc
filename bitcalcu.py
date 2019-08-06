@@ -10,11 +10,13 @@ xrp_price_gbp = (requests.get(url).json()[2]["price_gbp"])
 crypto_choice = input("BTC, ETH, BCH, LTC or XRP?:")
 
 print("Mode 1 is for real profit calculations")
-print("(If I brought " + crypto_choice + " when it cost £x, how much would my investment be")
+print("(If I brought " + crypto_choice +
+      " when it cost £x, how much would my investment be")
 print("worth now?)")
 
 print("Mode 2 is for hypothetical profit calculations")
-print("(If I brought " + crypto_choice + " when it cost £x, and " + crypto_choice + " could be worth £x, how")
+print("(If I brought " + crypto_choice + " when it cost £x, and " +
+      crypto_choice + " could be worth £x, how")
 print("much would my investment be worth now?)")
 
 mode = input("Mode 1 or 2?")
@@ -28,15 +30,16 @@ else:
     quit()
 
 # Below needs fixing:
-# if crypto_choice == 'BTC' or 'BCH' or 'ETH' or 'LTC' or 'XRP':
-#    print("")
-# else:
-#    print("Error: Choose BTC, BCH or ETH")
-#    time.sleep(3)
-#    quit()
+if crypto_choice in {'BTC', 'BCH', 'ETH', 'LTC', 'XRP'}:
+    print("")
+else:
+    print("Error: Choose BTC, BCH or ETH")
+    time.sleep(3)
+    quit()
 
 if mode == '1':
-    buy_price = float(input("I brought " + crypto_choice + " when 1" + crypto_choice + " cost:£"))  # original price
+    buy_price = float(input("I brought " + crypto_choice + " when 1" +
+                            crypto_choice + " cost:£"))  # original price
     if crypto_choice == 'BTC':
         current_price_int = btc_price_gbp  # new number
     elif crypto_choice == 'BCH':
@@ -49,8 +52,10 @@ if mode == '1':
         current_price_int = xrp_price_gbp
 
 elif mode == '2':
-    buy_price = float(input("I brought " + crypto_choice + " when 1" + crypto_choice + " cost:£"))
-    current_price_int = float(input("And 1" + crypto_choice + " could be worth this:£"))
+    buy_price = float(input("I brought " + crypto_choice +
+                            " when 1" + crypto_choice + " cost:£"))
+    current_price_int = float(
+        input("And 1" + crypto_choice + " could be worth this:£"))
 
 current_price = float(current_price_int)
 current_price = round(current_price, 2)
@@ -59,7 +64,7 @@ percentage_increase = increase / buy_price * 100
 
 money_invested = float(input("And I invested £"))  # money invested
 
-new_price = money_invested + (money_invested*percentage_increase/100)
+new_price = money_invested + (money_invested * percentage_increase / 100)
 new_price = round(new_price, 2)
 profit = new_price - money_invested
 profit = round(profit, 2)
