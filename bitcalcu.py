@@ -77,4 +77,6 @@ if mode == '1':
 if mode == '2':
     print("The investment would now be worth: £", new_price)
     print("And that would be £", profit, "profit")
+time.sleep(5)
+print("Thank you to CoinMarketCap for the API")
 input("")
