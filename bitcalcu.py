@@ -6,7 +6,7 @@ eth_price_gbp = (requests.get(url).json()[1]["price_gbp"])
 ltc_price_gbp = (requests.get(url).json()[3]["price_gbp"])
 bch_price_gbp = (requests.get(url).json()[4]["price_gbp"])
 xrp_price_gbp = (requests.get(url).json()[2]["price_gbp"])
-
+# yeet
 crypto_choice = input("BTC, ETH, BCH, LTC or XRP?:")
 
 if crypto_choice in {'BTC', 'BCH', 'ETH', 'LTC', 'XRP'}:
