@@ -1,11 +1,17 @@
 import requests
 import time
-url = 'https://api.coinmarketcap.com/v1/ticker/?convert=GBP'
-btc_price_gbp = (requests.get(url).json()[0]["price_gbp"])
-eth_price_gbp = (requests.get(url).json()[1]["price_gbp"])
-ltc_price_gbp = (requests.get(url).json()[3]["price_gbp"])
-bch_price_gbp = (requests.get(url).json()[4]["price_gbp"])
-xrp_price_gbp = (requests.get(url).json()[2]["price_gbp"])
+url1='https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=gbp'
+url2='https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=gbp'
+url3='https://api.coingecko.com/api/v3/simple/price?ids=litecoin&vs_currencies=gbp'
+url4='https://api.coingecko.com/api/v3/simple/price?ids=bitcoin-cash&vs_currencies=gbp'
+url5='https://api.coingecko.com/api/v3/simple/price?ids=ripple&vs_currencies=gbp'
+
+
+btc_price_gbp = (requests.get(url1).json()["bitcoin"]["gbp"])
+eth_price_gbp = (requests.get(url2).json()["ethereum"]["gbp"])
+ltc_price_gbp = (requests.get(url3).json()["litecoin"]["gbp"])
+bch_price_gbp = (requests.get(url4).json()["bitcoin-cash"]["gbp"])
+xrp_price_gbp = (requests.get(url5).json()["ripple"]["gbp"])
 crypto_choice = input("BTC, ETH, BCH, LTC or XRP?:")
 
 if crypto_choice in {'BTC', 'BCH', 'ETH', 'LTC', 'XRP'}:
